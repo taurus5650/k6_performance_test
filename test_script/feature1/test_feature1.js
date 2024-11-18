@@ -65,21 +65,18 @@ function uuidv4() {
 
 function buyerGetToken(userPhone, accountId, userId, platformUID, correlationId) {
 
-    const GetTestKeyBody = JSON.stringify({
+    const GetTokenBody = JSON.stringify({
         Phone: userPhone,
         AccountId: accountId,
         UserId: userId,
         PlatformUID: platformUID,
     });
 
-    const currentDate = new Date().toISOString().slice(0, 10).replace(/-/g, '');
-    const contentOfSignature = sigKey + GetTestKeyBody + currentDate;
-    
-    const GetTestKeyHeaders = {
+    const GetTokenHeaders = {
         'Content-Type': 'application/json',
         'X-Correlation-Id': correlationId,
     };
-    const res = http.post(FINAL_BUYER_GET_TOKEN_URL.toString(), GetTestKeyBody, {headers: GetTestKeyHeaders});
+    const res = http.post(FINAL_BUYER_GET_TOKEN_URL.toString(), GetTokenBody, {headers: GetTokenHeaders});
 
     const checkIsStatus200 = check(res, {'GetToken res.status is 200': (r) => r.status === 200});
     const checkIsResultSuccess = check(res, {'GetToken res.body': (r) => r.json()['Result'] === 1,});
@@ -96,7 +93,7 @@ function buyerGetToken(userPhone, accountId, userId, platformUID, correlationId)
 
 export function CreateTransactionFunc() {
 
-    //console.log(`--- ---- ---- START --- ---- ----`);
+    console.log(`--- ---- ---- START --- ---- ----`);
     
     const randomUserIndex = Math.floor(Math.random() * userCsv.length);
     const randomUser = userCsv[randomUserIndex];
