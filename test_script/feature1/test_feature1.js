@@ -45,11 +45,11 @@ export const options = {
 };
 
 const userCsv = new SharedArray("JSFUser", function () {
-    const data = papaparse.parse(open('../../data/feature1/user.csv'), {header: true}).data;
+    const data = papaparse.parse(open('../../testdata/feature1/user.csv'), {header: true}).data;
     return data;
 });
 const storeCsv = new SharedArray("JSFStore", function () {
-    const data = papaparse.parse(open('../../data/feature1/store.csv'), {header: true}).data;
+    const data = papaparse.parse(open('../../testdata/feature1/store.csv'), {header: true}).data;
     return data;
 });
 
