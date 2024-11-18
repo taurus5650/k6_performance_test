@@ -143,7 +143,7 @@ export function CreateTransactionFunc() {
 
     const isResultServerErr = res.json()['result'] === '999'
     if (isResultServerErr) {
-        console.error('EntryCOD ERROR !!!!!');
+        console.error('Server Error !!!!!');
         internalErrorCounter.add(1);
     }
 
