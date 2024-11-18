@@ -1,7 +1,7 @@
-# K6 API Load Test
+# K6 API Performance Test
 
 ## Purpose
-Using K6 do API Load Testing.
+Using K6 do API Performance Testing.
 
 ## K6 Mac Installation
 ```shell
