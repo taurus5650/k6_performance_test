@@ -19,7 +19,7 @@ const rateGetToken = new Rate('GetTokenRate');
 const counterGetToken = new Counter('GetTokenCounter');
 const rateCreateTransaction = new Rate('CreateTransactionRate');
 const counterCreateTransaction = new Counter('CreateTransactionCounter');
-const internalErrorCounter = new Counter('cod_internal_errors_999');
+const internalErrorCounter = new Counter('server_errors_999');
 
 // Load Test Scenario
 const Scenarios = {
@@ -39,8 +39,8 @@ export const options = {
     //noVUConnectionReuse: true,
     noConnectionReuse: false,
     thresholds: {
-        http_req_failed: ["rate < 0.05"], // 期望在整個測試執行過程中，錯誤率必須低於 5%
-        http_req_duration: ["avg < 1000", "p(95) < 1500"], // 平均請求必須在 1000s 內完成，95% 的請求必須在 1500s 內完成
+        http_req_failed: ["rate < 0.05"], 
+        http_req_duration: ["avg < 1000", "p(95) < 1500"], 
     },
 };
 
