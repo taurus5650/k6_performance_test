@@ -16,6 +16,6 @@ $ k6 run test_featureXX.js
 
 ## Test Result Example
 - Terminal Result
-![terminal_result.png](readme/terminal_result.png)
+![terminal_result_counter.png](readme/terminal_result_counter.png)
 - HTML Result
 ![html_result.png](readme/html_result.png)
