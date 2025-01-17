@@ -1,3 +1,8 @@
+## My insights
+Read my detailed insights on performance testing for the first time in this Medium article:  
+[1st Time Performance Testing: Prioritizing, Preparing, and Perfecting](https://medium.com/@shyinlim/first-time-performance-testing-prioritizing-preparing-and-perfecting-417e9d1524ae)
+
+-
 # K6 API Performance Test
 
 ## Purpose
